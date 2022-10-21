@@ -1,8 +1,11 @@
 #include "libTrabalho.h"
 
-//Nesta função, se existe imagem com nomeImagem cadastrada em arqFisicoImagensBase, 
-//esta imagem (img) é retornada. Caso a nomeImagem não esteja cadastrada, retorna-se img com 
-//o campo img.nome = nulo (usado para verificação da existência da imagem na chamada desta função).
+/*
+ *Nesta função, se existe imagem com nomeImagem cadastrada em arqFisicoImagensBase, 
+ *esta imagem (img) é retornada. Caso a nomeImagem não esteja cadastrada, retorna-se img com 
+ *o campo img.nome = nulo (usado para verificação da existência da imagem na chamada desta função).
+ */
+
 Imagem getImage(char arqFisicoImagensBase[], char nomeImagem[]){
    Imagem img;
    strcpy(img.nome,"nulo");

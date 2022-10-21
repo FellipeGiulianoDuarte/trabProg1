@@ -64,8 +64,8 @@ int gravaInfoImagem(char arqFisicoImagensBase[],  Imagem img);
 int alteraImagem(char arqFisicoImagensBase[], int id);
 void removeImagem(char arqFisicoImagensBase[], int id);
 
-//=============== Protótipos das operações sobre as imagens =============
 
+//=============== Protótipos das operações sobre as imagens =============
 char *alocaString (int size);
 int **alocaMatrizImagem (int lin, int col);
 void desalocaMatrizImagem(int **mat, int lin, int col);
