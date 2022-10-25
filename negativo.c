@@ -1,9 +1,11 @@
 /*
- * Comentário....
+ * todo pixel 255 vira 0, todo pixel 0 vira 255, um pixel x vira 255 - x
+ percorrer a matriz alterando valores
  */
-/****** Completar *****/
 void negativo (int **mat, int lin, int col){
-   /****** Completar *****/
-   printf("\nImplementar função negativo.\n");
-
+	for (int i = 0; i < lin; i++){
+		for (int j = 0; j < col; j++){
+			mat[i][j] = (255 - mat[i][j]);
+		}	
+	}
 }
