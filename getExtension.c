@@ -1,17 +1,18 @@
 /*
- * Ele está dando o nome da imagem como "xxx.yyy", no caso a ideia é trabalhar com um parser que ao encontrar o
+ * Ele está dando o nome da imagem como "xxx.yyy", parser que ao encontrar o
  "." da string nomeImagem, escreve os proximos char's em extension
  */
 void getExtension(char nomeImagem[], char extension[]){
-    int auxExtension = 0, i = 0, j;
+    int i = 0, j = 0;
     while(nomeImagem[i] != '.'){
         i++;
     }
-    for (j = i; nomeImagem[j] != '\0'; j++){
-        extension[auxExtension] = nomeImagem[j];
-        auxExtension++;
+    while(nomeImagem[i] != '\0'){
+        extension[j] = nomeImagem[i];
+        i++;
+        j++;
     }
-    extension[j+1] = '\0';	
+    extension[j] = '\0';
 }
 
 /*

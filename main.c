@@ -15,7 +15,7 @@
 int main(){
 
    //=======Variáveis para cadastro na base
-  //arqFisicoImagensBase.txt armazena todas as informações sobre as imagens cadastradas.
+  //arqFisicoImagensBase.bin armazena todas as informações sobre as imagens cadastradas.
   char arqFisicoImagensBase[] = "arqFisicoImagensBase.bin";
   int id;
   char nomeImagem[MAX_NAME];  
@@ -38,31 +38,33 @@ int main(){
      switch (opt){
 	     case 0:printf("\n");
 		    break;
-	     //===listaImagens	    
+	     //===listaImagens
 	     case 1: //listaImagens
-  		    break; 
-	     //===cadastraImagem	    
+  		    break;
+	     //===cadastraImagem
 	     case 2:
-		    //cadastraImagem
+		 	printf("\nInsira nome da imagem a ser cadastrada (com extensao): ");
+			scanf("%s", nomeImagem);
+		    cadastraImagem(arqFisicoImagensBase, nomeImagem);
 		    break;
-             //===alteraImagem		    
+             //===alteraImagem
 	     case 3:
 		    break; 
-             //===removeImagem 		    
+             //===removeImagem
 	     case 4: printf("\nID da imagem a remover: ");
 		    scanf("%d",&id);
 		    removeImagem(arqFisicoImagensBase, id);
 		    break;  
-             //===Binarizar		    
+             //===Binarizar
 	     case 5: //binarizar(matImagem, lin, col);
 		   break;
-	     //===Ruído  	   
+	     //===Ruído
 	     case 6:  //ruido(matImagem, lin, col);	
 		   break;
-	      //===Negativo 	   
+	      //===Negativo
 	     case 7: //negativo(matImagem, lin, col);	
 		   break;
-	     //====Espelhamento	    
+	     //====Espelhamento
 	     case 8: //espelhar(matImagem, lin, col);	
 		   break;		    
 	     default: printf("\nOpção inválida");
