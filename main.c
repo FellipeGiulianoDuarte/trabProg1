@@ -39,7 +39,8 @@ int main(){
 	     case 0:printf("\n");
 		    break;
 	     //===listaImagens
-	     case 1: //listaImagens
+	     case 1:
+		 	listaImagens(arqFisicoImagensBase);
   		    break;
 	     //===cadastraImagem
 	     case 2:
