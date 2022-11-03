@@ -8,8 +8,7 @@ int cadastraImagem(char arqFisicoImagensBase[], char nomeImagem[]){
       printf("\nImagem inexistente no diretorio\n");
       return -1;
    }
-   if (verificaCadastro(arqFisicoImagensBase, nomeImagem) != 0){
-      //arrumar criacao de arquivo
+   if (verificaCadastro(arqFisicoImagensBase, nomeImagem)){
       printf("\nImagem ja cadastrada\n");
       return 1;
    }
@@ -20,7 +19,7 @@ int cadastraImagem(char arqFisicoImagensBase[], char nomeImagem[]){
    img.id = getLastId(arqFisicoImagensBase)+1; //id
    getExtension(nomeImagem, img.tipo); //extension
    img.size = getSize(nomeImagem); //size
-   img.dimensao.largura = getDimension(nomeImagem, img.dimensao.altura); //dimension
+   img.dimensao.largura = getDimension(nomeImagem, &img.dimensao.altura); //dimension
    printf("\nInsira nome do proprietario: ");
    scanf("%s", img.proprietario); //proprietario
    struct tm tm =getSystemTime();

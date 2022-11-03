@@ -22,7 +22,7 @@ void listaImagens(char arqFisicoImagensBase[]){
       printf("\tProprietario: %s\n", imgTemp.proprietario);
       printf("\tData criacao: %d/%d/%d\n", imgTemp.data_criacao.dia, imgTemp.data_criacao.mes, imgTemp.data_criacao.ano);
       printf("\tData modificacao: %d/%d/%d\n", imgTemp.data_modificacao.dia, imgTemp.data_modificacao.mes, imgTemp.data_modificacao.ano);
-      printf("\t==============================\n");
+      printf("\t==============================");
    }
    //fecha arquivo
    fclose(listarImagem);

@@ -13,7 +13,7 @@ int verificaCadastro(char arqFisicoImagensBase[], char nomeImagem[]){
    Imagem imgTemp;
    //percorre arquivo
    while (fread(&imgTemp, sizeof(Imagem), 1, verificar) != 0){
-      if(strcmp(imgTemp.nome, nomeImagem) == 1){ //compara strings
+      if(strcmp(imgTemp.nome, nomeImagem) == 0){ //compara strings
          fclose(verificar);
          return 1;
       }
