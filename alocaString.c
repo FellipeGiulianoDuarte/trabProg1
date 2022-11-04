@@ -1,12 +1,13 @@
+#include "libTrabalho.h"
 /*
- * Comentário....
+ * aloca string com parametro de tamanho dela e retorna ponteiro para memoria
+ * lembrar de desalocar
  */
-/****** Completar *****/
 char *alocaString (int size){
-   /****** Completar *****/
-   printf("\nImplementar função alocaString.\n");
-
-   char *st; 
-   
+   char *st = NULL; 
+   st = (char *) malloc (size * sizeof (char));
+   if (st == NULL){
+    printf("\nMemória insuficiente - função alocaString\n");
+   }
    return st;
 }

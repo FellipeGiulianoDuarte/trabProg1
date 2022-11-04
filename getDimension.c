@@ -1,6 +1,7 @@
 #include "libTrabalho.h"
 /*
- * imagem PGM tem 3 dados antes da imagem: tipo, num Colunas, num Linhas. registra altura por ponteiro e largura por int
+ * imagem PGM tem 3 dados antes da imagem: tipo, num Colunas, num Linhas
+ * registra altura por ponteiro e largura por int
  */
 int getDimension(char nomeImagem[], int *pAltura){
 	//abre arquivo

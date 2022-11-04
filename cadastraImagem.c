@@ -1,6 +1,7 @@
 #include "libTrabalho.h"
 /*
- * verifica se arquivo existe, verifica se já está cadastrado; caso seja possivel, cadastra imagem e grava informacao da imagem
+ * verifica se arquivo existe, verifica se já está cadastrado
+ * caso seja possivel, cadastra imagem e grava informacao da imagem
  */
 int cadastraImagem(char arqFisicoImagensBase[], char nomeImagem[]){
    //verifica se é possivel gravar imagem
