@@ -10,9 +10,9 @@ int getDimension(char nomeImagem[], int *pAltura){
    	}
 	int largura;
 	//leitura
-	fscanf(fileImg, "%d");
-	fscanf(fileImg, "%d", &largura);
-	fscanf(fileImg, "%d", pAltura);
+	char stringAux[3];
+	fscanf(fileImg, "%s", stringAux);
+	fscanf(fileImg, "%d %d", &largura, pAltura);
 	//fecha arquivo
 	fclose(fileImg);
 	return largura;
