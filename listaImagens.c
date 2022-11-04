@@ -24,6 +24,7 @@ void listaImagens(char arqFisicoImagensBase[]){
       printf("\tData modificacao: %d/%d/%d\n", imgTemp.data_modificacao.dia, imgTemp.data_modificacao.mes, imgTemp.data_modificacao.ano);
       printf("\t==============================");
    }
+   printf("\n");
    //fecha arquivo
    fclose(listarImagem);
 

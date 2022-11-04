@@ -48,21 +48,29 @@ int main(){
 			scanf("%s", nomeImagem);
 		    cadastraImagem(arqFisicoImagensBase, nomeImagem);
 		    break;
-             //===alteraImagem
+         //===alteraImagem
 	     case 3:
-		    break; 
-             //===removeImagem
+		 	printf("\nInsira ID da imagem a ser alterada: ");
+			scanf("%d", &id);
+			if(alteraImagem(arqFisicoImagensBase, id)){
+				printf("\nInformacoes alteradas corretamente!");
+			}
+			else{
+				printf("\nNao foi possivel encontrar a imagem.\n");
+			}
+		    break;
+         //===removeImagem
 	     case 4: printf("\nID da imagem a remover: ");
 		    scanf("%d",&id);
 		    removeImagem(arqFisicoImagensBase, id);
 		    break;  
-             //===Binarizar
+    	 //===Binarizar
 	     case 5: //binarizar(matImagem, lin, col);
 		   break;
 	     //===Ruído
 	     case 6:  //ruido(matImagem, lin, col);	
 		   break;
-	      //===Negativo
+	     //===Negativo
 	     case 7: //negativo(matImagem, lin, col);	
 		   break;
 	     //====Espelhamento
