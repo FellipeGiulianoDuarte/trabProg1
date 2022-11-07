@@ -1,3 +1,5 @@
 arqFisicoImagensBase.bin
 saida.exe
 .vscode/settings.json
+*.o
+saida
