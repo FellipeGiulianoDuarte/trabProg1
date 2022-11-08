@@ -7,10 +7,10 @@ int **alocaMatrizImagem (int lin, int col){
    int i; 
    int **mat;
    //alocacao das linhas
-   mat = malloc (lin * sizeof (int*)) ;
+   mat = (int *) malloc (lin * sizeof (int*)) ;
    // aloca cada uma das linhas (vetores de col inteiros)
    for (i=0; i < lin; i++){
-      mat[i] = malloc (col * sizeof (int));
+      mat[i] = (int *) malloc (col * sizeof (int));
    }   
    if (mat == NULL){
       printf("\nMemória insuficiente - função alocaMatrizImagem\n");
