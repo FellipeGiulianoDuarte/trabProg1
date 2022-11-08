@@ -63,10 +63,31 @@ int main(){
 	     case 4: printf("\nID da imagem a remover: ");
 		    scanf("%d",&id);
 		    removeImagem(arqFisicoImagensBase, id);
-		    break;  
+		    break; 
     	 //===Binarizar
-	     case 5: //binarizar(matImagem, lin, col);
-		   break;
+	     case 5:
+		 	auxNomeImagem = alocaString(MAX_NAME);
+			printf("\nNome imagem a binarizar: ");
+			scanf("%s", auxNomeImagem);
+			if(verificaCadastro(arqFisicoImagensBase, auxNomeImagem) != 1){
+				printf("\nErro ao verificar cadastro - Binarizar.\n");
+			}
+			tipo = alocaString(3);
+			matImagem = leArquivoImagem(auxNomeImagem, tipo, &lin, &col, &maxval);
+			if (matImagem == NULL)
+			{
+				free(tipo);
+				free(auxNomeImagem);
+			}
+		 	binarizar(matImagem, lin, col);
+			nomeArqSaida = alocaString(MAX_NAME);
+			printf("\nNome arquivo saida: ");
+			scanf("%s", nomeArqSaida);
+			gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
+			free(tipo);
+			free(auxNomeImagem);
+			desalocaMatrizImagem(matImagem, lin, col);
+		    break;
 	     //===Ruído
 	     case 6:  //ruido(matImagem, lin, col);	
 		   break;

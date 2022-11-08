@@ -26,7 +26,7 @@ int alteraImagem(char arqFisicoImagensBase[], int id){
       fclose(pegarImagem);
       return 0;
    }
-   
+   fseek(pegarImagem, (aux-1) * sizeof(Imagem), SEEK_SET);
    //altera os dados da imagem
    printf("\nInsira nome do novo proprietario: ");
    scanf("%s", imgTemp.proprietario); //proprietario
