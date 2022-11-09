@@ -6,7 +6,7 @@ int verificaCadastro(char arqFisicoImagensBase[], char nomeImagem[]){
    //abre arquivo
    FILE *verificar = fopen(arqFisicoImagensBase,"a+b");
    if (verificar == NULL){
-      return -1;
+      return -1; //nao abriu
    }
    //volta para início
    rewind(verificar);
@@ -15,10 +15,10 @@ int verificaCadastro(char arqFisicoImagensBase[], char nomeImagem[]){
    while (fread(&imgTemp, sizeof(Imagem), 1, verificar) != 0){
       if(strcmp(imgTemp.nome, nomeImagem) == 0){ //compara strings
          fclose(verificar);
-         return 1;
+         return 1; //existe
       }
    }
    //fecha arquivo
    fclose(verificar);
-   return 0;
+   return 0; //nao existe
 }

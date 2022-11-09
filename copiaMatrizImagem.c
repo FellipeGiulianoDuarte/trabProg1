@@ -1,10 +1,11 @@
+#include "libTrabalho.h"
 /*
- * Comentário....
+ * copia os valores de mat para matCopia 
  */
-/****** Completar *****/
 void copiaMatrizImagem (int **mat, int **matCopia, int lin, int col){
-   /****** Completar *****/
-   printf("\nImplementar - função copiaMatrizImagem.\n");
-	
-
+    for (int i = 0; i < lin; i++){
+        for (int j = 0; j < col; j++){
+            matCopia[i][j] = mat[i][j];
+        }
+    }
 }

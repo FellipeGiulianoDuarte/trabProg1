@@ -2,7 +2,6 @@
 /*
  * abre arquivo e faz um append com dados da imagem recebida
  */
-/****** Completar *****/
 int gravaInfoImagem(char arqFisicoImagensBase[], Imagem img){
    FILE *gravarImagem = fopen(arqFisicoImagensBase, "ab");
 	if (gravarImagem == NULL){

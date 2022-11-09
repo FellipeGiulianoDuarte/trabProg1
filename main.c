@@ -80,23 +80,143 @@ int main(){
 			}
 		 	binarizar(matImagem, lin, col);
 			nomeArqSaida = alocaString(MAX_NAME);
-			printf("\nNome arquivo saida: ");
-			scanf("%s", nomeArqSaida);
+			do{
+				printf("\nNome arquivo saida: ");
+				scanf("%s", nomeArqSaida);
+			} while (verificaCadastro(arqFisicoImagensBase, nomeArqSaida)!=0);
 			gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
+			//alterando dados
+			img = getImage(arqFisicoImagensBase, auxNomeImagem);
+			strcpy(img.nome, nomeArqSaida);
+			struct tm tm = getSystemTime();
+			img.data_modificacao.dia = tm.tm_mday;
+   			img.data_modificacao.mes = tm.tm_mon + 1;
+   			img.data_modificacao.ano = tm.tm_year + 1900;
+			img.id = getLastId(arqFisicoImagensBase)+1;
+			gravaInfoImagem(arqFisicoImagensBase, img);
+			printf("\nImagem binarizada com sucesso! id = %d\n", img.id);
+			//desalocando memoria
 			free(tipo);
 			free(auxNomeImagem);
 			free(nomeArqSaida);
 			desalocaMatrizImagem(matImagem, lin, col);
 		    break;
 	     //===Ruído
-	     case 6:  //ruido(matImagem, lin, col);	
-		   break;
+	     case 6:
+			auxNomeImagem = alocaString(MAX_NAME);
+			printf("\nNome imagem a gerar Ruido: ");
+			scanf("%s", auxNomeImagem);
+			if(verificaCadastro(arqFisicoImagensBase, auxNomeImagem) != 1){
+				printf("\nErro ao verificar cadastro - Ruido.\n");
+			}
+			tipo = alocaString(3);
+			matImagem = leArquivoImagem(auxNomeImagem, tipo, &lin, &col, &maxval);
+			if (matImagem == NULL){
+				free(tipo);
+				free(auxNomeImagem);
+			}
+		 	ruido(matImagem, lin, col);
+			nomeArqSaida = alocaString(MAX_NAME);
+			do{
+				printf("\nNome arquivo saida: ");
+				scanf("%s", nomeArqSaida);
+			} while (verificaCadastro(arqFisicoImagensBase, nomeArqSaida)!=0);
+			gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
+			//alterando dados
+			img = getImage(arqFisicoImagensBase, auxNomeImagem);
+			strcpy(img.nome, nomeArqSaida);
+			tm = getSystemTime();
+			img.data_modificacao.dia = tm.tm_mday;
+   			img.data_modificacao.mes = tm.tm_mon + 1;
+   			img.data_modificacao.ano = tm.tm_year + 1900;
+			img.id = getLastId(arqFisicoImagensBase)+1;
+			gravaInfoImagem(arqFisicoImagensBase, img);
+			printf("\nProcesso de ruido feito com sucesso! id = %d\n", img.id);
+			//desalocando memoria
+			free(tipo);
+			free(auxNomeImagem);
+			free(nomeArqSaida);
+			desalocaMatrizImagem(matImagem, lin, col);
+		    break;
 	     //===Negativo
-	     case 7: //negativo(matImagem, lin, col);	
-		   break;
+	     case 7:
+			auxNomeImagem = alocaString(MAX_NAME);
+			printf("\nNome imagem a gerar Negativo: ");
+			scanf("%s", auxNomeImagem);
+			if(verificaCadastro(arqFisicoImagensBase, auxNomeImagem) != 1){
+				printf("\nErro ao verificar cadastro - Negativo.\n");
+			}
+			tipo = alocaString(3);
+			matImagem = leArquivoImagem(auxNomeImagem, tipo, &lin, &col, &maxval);
+			if (matImagem == NULL){
+				free(tipo);
+				free(auxNomeImagem);
+			}
+		 	negativo(matImagem, lin, col);
+			nomeArqSaida = alocaString(MAX_NAME);
+			do{
+				printf("\nNome arquivo saida: ");
+				scanf("%s", nomeArqSaida);
+			} while (verificaCadastro(arqFisicoImagensBase, nomeArqSaida)!=0);
+			gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
+			//alterando dados
+			img = getImage(arqFisicoImagensBase, auxNomeImagem);
+			strcpy(img.nome, nomeArqSaida);
+			tm = getSystemTime();
+			img.data_modificacao.dia = tm.tm_mday;
+   			img.data_modificacao.mes = tm.tm_mon + 1;
+   			img.data_modificacao.ano = tm.tm_year + 1900;
+			img.id = getLastId(arqFisicoImagensBase)+1;
+			gravaInfoImagem(arqFisicoImagensBase, img);
+			printf("\nProcesso de negativo feito com sucesso! id = %d\n", img.id);
+			//desalocando memoria
+			free(tipo);
+			free(auxNomeImagem);
+			free(nomeArqSaida);
+			desalocaMatrizImagem(matImagem, lin, col);
+		    break;
 	     //====Espelhamento
-	     case 8: //espelhar(matImagem, lin, col);	
-		   break;		    
+	     case 8:
+		 	auxNomeImagem = alocaString(MAX_NAME);
+			printf("\nNome imagem a Espelhar: ");
+			scanf("%s", auxNomeImagem);
+			if(verificaCadastro(arqFisicoImagensBase, auxNomeImagem) != 1){
+				printf("\nErro ao verificar cadastro - Espelhar.\n");
+			}
+			tipo = alocaString(3);
+			matImagem = leArquivoImagem(auxNomeImagem, tipo, &lin, &col, &maxval);
+			if (matImagem == NULL){
+				free(tipo);
+				free(auxNomeImagem);
+			}
+			//aloca matCopia
+			int **matCopia = alocaMatrizImagem(lin, col);
+			copiaMatrizImagem(matImagem, matCopia, lin, col);
+		 	espelhar(matCopia, lin, col);
+			nomeArqSaida = alocaString(MAX_NAME);
+			do{
+				printf("\nNome arquivo saida: ");
+				scanf("%s", nomeArqSaida);
+			} while (verificaCadastro(arqFisicoImagensBase, nomeArqSaida)!=0);
+			gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matCopia);
+			//alterando dados
+			img = getImage(arqFisicoImagensBase, auxNomeImagem);
+			strcpy(img.nome, nomeArqSaida);
+			tm = getSystemTime();
+			img.data_modificacao.dia = tm.tm_mday;
+   			img.data_modificacao.mes = tm.tm_mon + 1;
+   			img.data_modificacao.ano = tm.tm_year + 1900;
+			img.id = getLastId(arqFisicoImagensBase)+1;
+			gravaInfoImagem(arqFisicoImagensBase, img);
+			printf("\nImagem espelhada com sucesso! id = %d\n", img.id);
+			//desalocando memoria
+			free(tipo);
+			free(auxNomeImagem);
+			free(nomeArqSaida);
+			desalocaMatrizImagem(matCopia, lin, col);
+			desalocaMatrizImagem(matImagem, lin, col);
+		    break;	
+		    break;		    
 	     default: printf("\nOpção inválida");
      }
 
