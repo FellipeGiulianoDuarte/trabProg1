@@ -9,8 +9,8 @@ void espelhar(int **mat, int lin, int col)
         for (int i = 0; i < lin; i++)
         {
             aux = mat[i][j];                   // copie a coluna esq. em aux
-            mat[i][j] = mat[i][(col - 1) - j]; // copia de coluna dir. para coluna esq.
-            mat[i][(col - 1) - j] = aux;       // copia de aux para coluna dir.
+            mat[i][j] = mat[i][((col - 1) - j)]; // copia de coluna dir. para coluna esq.
+            mat[i][((col - 1) - j)] = aux;       // copia de aux para coluna dir.
         }
     }
 }
