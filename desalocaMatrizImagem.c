@@ -1,3 +1,4 @@
+#include "libTrabalho.h"
 /*
  * desaloca em i linhas, todos os elementos alocados, depois desaloca mat
  */

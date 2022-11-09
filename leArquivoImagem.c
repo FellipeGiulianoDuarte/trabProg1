@@ -10,8 +10,7 @@ int **leArquivoImagem (char *nomeArqEntrada, char *tipo, int *lin, int *col, int
         return NULL;
     }
     fscanf(arq, "%s", tipo);
-    fscanf(arq, "%d", col);
-    fscanf(arq, "%d", lin);
+    fscanf(arq, "%d %d", col, lin);
     fscanf(arq, "%d", maxval);
     int **mat = alocaMatrizImagem(*lin, *col);
     if (mat == NULL){

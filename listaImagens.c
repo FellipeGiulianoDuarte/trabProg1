@@ -7,7 +7,7 @@ void listaImagens(char arqFisicoImagensBase[]){
    //abre arquivo
    FILE *listarImagem = fopen(arqFisicoImagensBase,"rb");
    if (listarImagem == NULL){
-      return -1;
+      return;
    }
    Imagem imgTemp;
    //percorre arquivo

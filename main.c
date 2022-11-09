@@ -74,8 +74,7 @@ int main(){
 			}
 			tipo = alocaString(3);
 			matImagem = leArquivoImagem(auxNomeImagem, tipo, &lin, &col, &maxval);
-			if (matImagem == NULL)
-			{
+			if (matImagem == NULL){
 				free(tipo);
 				free(auxNomeImagem);
 			}
@@ -86,6 +85,7 @@ int main(){
 			gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
 			free(tipo);
 			free(auxNomeImagem);
+			free(nomeArqSaida);
 			desalocaMatrizImagem(matImagem, lin, col);
 		    break;
 	     //===Ruído
