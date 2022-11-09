@@ -1,5 +1,5 @@
 #include "libTrabalho.h"
-
+//implementada por default
 //Menu que apresenta as possíveis operações que o usuário pode realizar no sistema
 void menuOperacoes(){
    printf("\n0 - Sair.");

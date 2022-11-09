@@ -1,5 +1,5 @@
 #include "libTrabalho.h"
-
+//implementada por default
 /*
  *Nesta função, se existe imagem com nomeImagem cadastrada em arqFisicoImagensBase, 
  *esta imagem (img) é retornada. Caso a nomeImagem não esteja cadastrada, retorna-se img com 

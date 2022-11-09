@@ -1,5 +1,5 @@
 #include "libTrabalho.h"
-
+//implementada por default
 /*Esta função verifica se dentro do diretório corrente (.) existe um arquivo com nome imagem_a_verificar. 
  */
 int verificaExistenciaDeImagem(char imagem_a_verificar[]){

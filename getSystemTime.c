@@ -1,6 +1,6 @@
 //usa as libs time.h e dirent.h que foram incluídas na libTrabalho.h
 #include "libTrabalho.h"
-
+//implementada por default
 //Pega data e hora do sistema
 struct tm getSystemTime(){
      	time_t mytime;
